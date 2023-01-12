@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}     
+     
+     <!-- content section  -->
+     <div class="container contact mt-4">
+      <h1 class="text-center text-warning mb-5">Contact us</h1>
+      <div class="row">
+          <div class="col-12 col-md-6">
+              <form action="{% url 'contact' %}" method="POST"> 
+                {% csrf_token %} 
+                  <div class="form-outline mb-4">
+                    <input type="text" name="name" id="form4Example1" class="form-control" />
+                    <label class="form-label" for="form4Example1">Name</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="email" name="email" id="form4Example2" class="form-control" />
+                    <label class="form-label" for="form4Example2">Email address</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <textarea class="form-control" name="message" id="form4Example3" rows="4"></textarea>
+                    <label class="form-label" for="form4Example3">Message</label>
+                  </div>
+                  <button type="submit" class="btn btn-warning btn-block mb-4">Send</button>
+                </form>
+          </div>
+          <div class="col-12 col-md-6">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8119532.699086328!2d-5.4568018499999695!3d6.443381800000024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf7e8aa703571%3A0x9a733cf2cf6f4664!2sOsapa%20london!5e0!3m2!1sen!2sng!4v1664874817370!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+      </div>
+    </div>
+     <!-- content section done  -->
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
+  
+                   
+      
+          
+          
